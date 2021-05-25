@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mecanografia</title>
+  <link rel="stylesheet" href="core.css">
 </head>
 <body>
+  
+
+  <div id="Encabezado">
     
-</body>
+    <div id="Usuario">
+        <label><center>CREADORES:</center> </label>  
+        <br>
+        <label>Braulio Hernandez<center>Abraham Carmona Balbuena</center></label>
+        <p align="right">Samuel Carmona Balbuena</p>      
+        <center> <label>Proyecto De Mecanografia </label><center>
+      <br> 
+      <label><center>"TEC-KEY"</center> </label>
+    <br>
+    <label><center>Digite un Usuario: </center></label>
+    <br>
+    <center><input type="text" id="usuario" placeholder='ej. Pepito_Pro' class='entrada'></center>
+    <center> <input type="button" id="btnusuario" value='Confirmar Usuario' class='boton margen-superior' /><center>
+
+    </div>
+    
+  </div>
+  
+  <div id="Cuerpo">
+    
+    <div id="Instructivo-Juego">
+        <label><center>INSTRUCCIONES:</center> </label>  
+        <br>
+         <p align="center">1.- En el recuadro de abajo aparecera un  texto, se debe copiar en la texbox</p> 
+         <p align="center">2.- La posicion de las manos en el teclado debe ser como semuestra en la figura de abajo</p>
+         <p align="center">3.- Trata de superar tus Limites</p> 
+              
+         <center><img src="Teclado.png"
+          width="800"
+         height="300"><center>
+        <br> 
+        <label><center>Selecciona la Dificultad:</center> </label>
+        <br> 
+            <center> <input type="button" id="btnFacil" value='Facil' class='boton margen-superior' /><center>
+            <center> <input type="button" id="btnMedio" value='Normal' class='boton margen-superior' /><center>
+            <center> <input type="button" id="btnDificil" value='Dificil' class='boton margen-superior' /><center>
+        <br> 
+        <center> <canvas id="canvas" width="800" height="100"></canvas></center>
+        <br> 
+    <center><input type="text" id="Entrada" placeholder='Escribe aqui' class='entrada'></center>
+  
+    </div>
+    
+  </div>
+  <div id="Pie-Pagina">
+    
+    <div id="Resultados">
+        <br>
+        <label><center>RESULTADOS:</center> </label>  
+    
+        <p align="center">Equivocaciones totales:<p>
+        <p align="center">Mayor racha:<p>   
+          
+            <center><img src="echeleganasmijo.png"
+                width="300"
+               height="300"><center>
+                   <br>
+                <center> <input type="button" id="btnReinicio" value='Reiniciar' class='boton margen-superior' /><center>
+        
+    </div>
+    
+  </div>
+
+  <script src="core.js"></script>
+
+</body> 
 </html>
