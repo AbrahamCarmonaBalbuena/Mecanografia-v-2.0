@@ -1,0 +1,74 @@
+#Encabezado,#Cuerpo, #Pie-Pagina{ display: flex; justify-content: center; }
+
+canvas{ 
+  position: relative; 
+  border: 1px solid rgb(149, 45, 45);
+  margin-right: 5px;
+  background-color: #ffffff;
+}
+
+#Usuario{ 
+  width: 900px;
+  background: #ECECEC;
+  padding: 10px 20px;
+}
+  .boton, .entrada{ height: 40px; }
+  .margen-superior{ margin-top: 10px; }
+  .margen-inferior{ margin-bottom: 10px; }
+  .boton{
+    background: #D3D3D3;
+    border: 1px solid #D3D3D3;
+    border-radius: 8px;
+    width: 300px;
+    
+  }
+
+  .entrada{
+    width: 100;
+    border: 1px solid #595959;
+}
+
+
+#Instructivo-Juego{ 
+    width: 900px;
+    background: #ECECEC;
+    padding: 10px 20px;
+  }
+    .boton, .entrada{ height: 40px; }
+    .margen-superior{ margin-top: 10px; }
+    .margen-inferior{ margin-bottom: 10px; }
+    .boton{
+      background: #D3D3D3;
+      border: 1px solid #D3D3D3;
+      border-radius: 8px;
+      width: 300px;
+      
+    }
+  
+    .entrada{
+      width: 100;
+      border: 1px solid #595959;
+  }
+
+
+
+  #Resultados{ 
+    width: 900px;
+    background: #ECECEC;
+    padding: 10px 20px;
+  }
+    .boton, .entrada{ height: 40px; }
+    .margen-superior{ margin-top: 10px; }
+    .margen-inferior{ margin-bottom: 10px; }
+    .boton{
+      background: #D3D3D3;
+      border: 1px solid #D3D3D3;
+      border-radius: 8px;
+      width: 300px;
+      
+    }
+  
+    .entrada{
+      width: 100;
+      border: 1px solid #595959;
+  }
