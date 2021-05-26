@@ -4,4 +4,4 @@ Proyecto: Mecanografia
 Integrantes:
 
 
-- Abraham Carmona Balbuena
+- Abraham Carmona Balbuena (19320911)
