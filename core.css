@@ -10,6 +10,10 @@ canvas{
 #Usuario{ 
   width: 900px;
   background: #ECECEC;
+  font-family:'Century Gothic';
+  font-size: 14pt;
+  font-weight:600;
+  text-shadow: gray 3px 3px;
   padding: 10px 20px;
 }
   .boton, .entrada{ height: 40px; }
