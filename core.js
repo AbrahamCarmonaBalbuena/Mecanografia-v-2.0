@@ -54,7 +54,7 @@ let canvas = document.getElementById('canvas'),
 
       btnFacil.addEventListener( 'click', function(){
         textoamostrar = dificultad.facil
-        context.fillText(textoamostrar[pos],10,50)
+        
 
         context.font = '20px serif';
         context.fillText(textoamostrar[0],10,50)
