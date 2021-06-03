@@ -8,18 +8,27 @@ canvas{
 }
 
 #Usuario{ 
-  width: 900px;
-  background: #ECECEC;
+  width: 1600px;
+  background: #70f8d4;
+  font-family:'Century Gothic';
+  font-size: 14pt;
+  font-weight:600;
+  text-shadow: gray 3px 3px;
   padding: 10px 20px;
 }
-  .boton, .entrada{ height: 40px; }
-  .margen-superior{ margin-top: 10px; }
-  .margen-inferior{ margin-bottom: 10px; }
+  .boton, .entrada{ height: 40px; 
+    font-family:'Century Gothic';
+  }
+  .margen-superior{ margin-top: 10px;
+  }
+  .margen-inferior{ margin-bottom: 10px; 
+  }
   .boton{
     background: #D3D3D3;
     border: 1px solid #D3D3D3;
     border-radius: 8px;
     width: 300px;
+    font-family:'Century Gothic';
     
   }
 
@@ -30,9 +39,13 @@ canvas{
 
 
 #Instructivo-Juego{ 
-    width: 900px;
-    background: #ECECEC;
-    padding: 10px 20px;
+  width: 1600px;
+  background: #70f8d4;
+  font-family:'Century Gothic';
+  font-size: 14pt;
+  font-weight:600;
+  text-shadow: gray 3px 3px;
+  padding: 10px 20px;
   }
     .boton, .entrada{ height: 40px; }
     .margen-superior{ margin-top: 10px; }
@@ -53,9 +66,13 @@ canvas{
 
 
   #Resultados{ 
-    width: 900px;
-    background: #ECECEC;
-    padding: 10px 20px;
+  width: 1600px;
+  background: #70f8d4;
+  font-family:'Century Gothic';
+  font-size: 14pt;
+  font-weight:600;
+  text-shadow: gray 3px 3px;
+  padding: 10px 20px;
   }
     .boton, .entrada{ height: 40px; }
     .margen-superior{ margin-top: 10px; }
