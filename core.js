@@ -11,7 +11,8 @@ imagen2.src="Lesabes.png"
 
 let canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
-
+imagen1= new Image()
+imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
     
 
     btnReinicio=document.getElementById('btnReinicio'),
@@ -21,10 +22,10 @@ let canvas = document.getElementById('canvas'),
    
     dificultad = {
       "facil":["A","S","D","F",""],
-      "medio":["qaz","wsx","edc","rfv"],
-      "dificil":["Kiet","saKi","HieLo","AsKo","KrikO","AsLa"]
+      "medio":["A","W","D","R","J","I", "L","P", ""],
+      "dificil":["Q","X","E","V","T","N","U","J","O","L","A","H","F","K",""]
     },
-    finalizado =["silesabes"]
+    finalizado =["Completado"]
     textoamostrar =[],
     pos=0,
 //declaracion del boton y la lectura del usuario
@@ -63,10 +64,11 @@ let canvas = document.getElementById('canvas'),
       } )
 
       btnFacil.addEventListener( 'click', function(){
+        context.drawImage(imagen1,0,50); 
         textoamostrar = dificultad.facil
 
         context.font = '20px serif';
-        context.fillText(textoamostrar[0],250,50)
+        context.fillText(textoamostrar[0],400,50)
 
         window.document.addEventListener('keydown', function (e){
           let arrayletra = e.code.split('Key')
@@ -84,54 +86,86 @@ let canvas = document.getElementById('canvas'),
 
           if(textoamostrar[pos] == letra){
           pos++
+          
           context.clearRect(0, 0, canvas.width, canvas.height);
+          context.drawImage(imagen1,0,50); 
           if(pos == 4)
-          {
+          {       
             context2.font = '20px serif';
             context1.font = '20px serif';
-            context.fillText(finalizado[0],220,50);
+            context.fillText(finalizado[0],350,50);
             context1.fillText(usuario2,50,25)
-            context2.fillText(equivocaciones,75,25)
+            context2.fillText(equivocaciones,70,25)
             
-            //imagen2.onload=function() { //la nueva imagen tiene que haberse cargado
-            cxt2.drawImage(imagen2,0,0); //insertar imagen en canvas
-          //}
+           
+            cxt2.drawImage(imagen2,0,0); 
+        
 
           }
-          context.fillText(textoamostrar[pos],250,50)
+          context.fillText(textoamostrar[pos],400,50)
           }
           else{
           console.log('Tecla incorrecta')
           equivocaciones++
           console.log(equivocaciones)
           }
-          })
-   
-        //desbloqueamos la entrada
-      
+          })    
 
        //bloqueamos los demas botones de niveles para que no impriman en el canvas hasta recargar
        btnMedio.disabled=true
        btnDificil.disabled=true
-       //comparamos la letra de 
-
       } )
 
-      btnMedio.addEventListener( 'click', function(){
-      
-        //desbloqueamos la entrada
-       
+      btnMedio.addEventListener( 'click', function(){      
 
        //bloqueamos los demas botones de niveles para que no impriman en el canvas hasta recargar
        btnFacil.disabled=true,
        btnDificil.disabled=true
 
        textoamostrar = dificultad.medio
+       
+       context.drawImage(imagen1,0,50); 
        context.font = '20px serif';
-       context.fillText(textoamostrar[0],10,50)
-       context.fillText(textoamostrar[1],70,50)
-       context.fillText(textoamostrar[2],130,50)
-       context.fillText(textoamostrar[3],190,50)
+       context.fillText(textoamostrar[0],400,50)
+
+       window.document.addEventListener('keydown', function (e){
+         let arrayletra = e.code.split('Key')
+         console.log(arrayletra)
+         let letra =''
+         if(arrayletra.length==2)
+         {
+           letra = arrayletra[1]
+         }
+         else
+         {
+           letra = arrayletra[0]
+         }
+         console.log(letra)
+
+         if(textoamostrar[pos] == letra){
+         pos++
+         
+         context.clearRect(0, 0, canvas.width, canvas.height);
+         context.drawImage(imagen1,0,50); 
+         if(pos == 8)
+         {       
+           context2.font = '20px serif';
+           context1.font = '20px serif';
+           context.fillText(finalizado[0],350,50);
+           context1.fillText(usuario2,50,25)
+           context2.fillText(equivocaciones,70,25)
+            
+           cxt2.drawImage(imagen2,0,0); 
+      
+         }
+         context.fillText(textoamostrar[pos],400,50)
+         }
+         else{
+         console.log('Tecla incorrecta')
+         equivocaciones++
+         console.log(equivocaciones)
+         }
+         })  
       } )
 
       btnDificil.addEventListener( 'click', function(){
@@ -144,21 +178,49 @@ let canvas = document.getElementById('canvas'),
        btnMedio.disabled=true
 
        textoamostrar = dificultad.dificil
+       context.drawImage(imagen1,0,50); 
        context.font = '20px serif';
-       context.fillText(textoamostrar[0],10,50)
-       context.fillText(textoamostrar[1],90,50)
-       context.fillText(textoamostrar[2],170,50)
-       context.fillText(textoamostrar[3],250,50)
-       context.fillText(textoamostrar[4],330,50)
-       context.fillText(textoamostrar[5],410,50)
+       context.fillText(textoamostrar[0],400,50)
 
+       window.document.addEventListener('keydown', function (e){
+         let arrayletra = e.code.split('Key')
+         console.log(arrayletra)
+         let letra =''
+         if(arrayletra.length==2)
+         {
+           letra = arrayletra[1]
+         }
+         else
+         {
+           letra = arrayletra[0]
+         }
+         console.log(letra)
+
+         if(textoamostrar[pos] == letra){
+         pos++
+         
+         context.clearRect(0, 0, canvas.width, canvas.height);
+         context.drawImage(imagen1,0,50); 
+         if(pos == 14)
+         {       
+           context2.font = '20px serif';
+           context1.font = '20px serif';
+           context.fillText(finalizado[0],350,50);
+           context1.fillText(usuario2,50,25)
+           context2.fillText(equivocaciones,70,25)            
+           cxt2.drawImage(imagen2,0,0); 
+
+         }
+         context.fillText(textoamostrar[pos],400,50)
+         }
+         else{
+         console.log('Tecla incorrecta')
+         equivocaciones++
+         console.log(equivocaciones)
+         }
+         })  
       } )
     
       btnReinicio.addEventListener( 'click', function (){
         location.reload();
-      } )
-      
-      btnFacil.addEventListener( 'click', function(){
-      //const Facil = "Este Texto es el facil si no"
-       
       } )
