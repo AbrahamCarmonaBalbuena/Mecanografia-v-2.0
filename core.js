@@ -1,8 +1,11 @@
 let canvas2 = document.getElementById('canvas2')
 context1 = canvas2.getContext('2d')
+let dedo = dedos 
+//let colores = color_dedo[dedo[letra]]
 
 let canvas3 = document.getElementById('canvas3')
 context2 = canvas3.getContext('2d')
+
 
 let canvas4 = document.getElementById('canvas4')
 cxt2 = canvas4.getContext('2d')
@@ -13,7 +16,6 @@ let canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
 imagen1= new Image()
 imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
-    
 
     btnReinicio=document.getElementById('btnReinicio'),
     posX=50
@@ -22,9 +24,10 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
    
     dificultad = {
       "facil":["A","S","D","F",""],
-      "medio":["A","W","D","R","J","I", "L","P", ""],
+      "medio":["A","W","D","R","J","I", "L","P", "X"],
       "dificil":["Q","X","E","V","T","N","U","J","O","L","A","H","F","K",""]
     },
+    
     finalizado =["Completado"]
     textoamostrar =[],
     pos=0,
@@ -62,31 +65,71 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
         //bloqueamos el boton usuario para que no se generen nuevamente hasta recargar la pagina
         btnusuario.disabled= true
       } )
-
+      
       btnFacil.addEventListener( 'click', function(){
         context.drawImage(imagen1,0,50); 
         textoamostrar = dificultad.facil
 
         context.font = '20px serif';
         context.fillText(textoamostrar[0],400,50)
-
+        
+        
         window.document.addEventListener('keydown', function (e){
           let arrayletra = e.code.split('Key')
           console.log(arrayletra)
           let letra =''
+          
+          //let colores = color_dedo[ dedo [ dificultad[ pos ] ] ]
+          
+         // context.fillStyle=color_dedo.color
+         // context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
           if(arrayletra.length==2)
           {
+            
             letra = arrayletra[1]
+   
+              context.fillStyle=color_dedo[dedo[letra]].color
+            context.fillRect(color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY,color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width)
+            
+           // context.fillStyle=color_dedo[dedo[letra]].color
+          //  context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
+           /*
+              context.fillStyle=color_dedo[dedo[letra]].color
+            context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
+            */
+
+            
+           //para pintar la lentra
+           /* context.fillStyle=color_dedo[dedo[letra]].color
+            context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
+           */ 
+           
+           
+            //console.log(colores)
+           // console.log(color_dedo[dedo[letra]].color) 
+           
+           //context.fillStyle=colores.color
+           // context.fillRect(colores.width,colores.height,colores.posX,colores.posY)
+            //context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
+           // context.fillStyle=color_dedo[dedo[letra]]
+            //context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
+            //context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
+           // console.log(color_dedo[dedo[letra]])
+          
           }
           else
           {
             letra = arrayletra[0]
           }
           console.log(letra)
-
+          
           if(textoamostrar[pos] == letra){
           pos++
+
           
+          
+          //context.fillRect = (color1.posX, color1.posY, color1.width, color1.height)
+
           context.clearRect(0, 0, canvas.width, canvas.height);
           context.drawImage(imagen1,0,50); 
           if(pos == 4)
@@ -108,9 +151,10 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
           console.log('Tecla incorrecta')
           equivocaciones++
           console.log(equivocaciones)
+          
           }
           })    
-
+          
        //bloqueamos los demas botones de niveles para que no impriman en el canvas hasta recargar
        btnMedio.disabled=true
        btnDificil.disabled=true
