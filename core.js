@@ -1,7 +1,6 @@
 let canvas2 = document.getElementById('canvas2')
 context1 = canvas2.getContext('2d')
 let dedo = dedos 
-//let colores = color_dedo[dedo[letra]]
 
 let canvas3 = document.getElementById('canvas3')
 context2 = canvas3.getContext('2d')
@@ -76,60 +75,23 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
         
         window.document.addEventListener('keydown', function (e){
           let arrayletra = e.code.split('Key')
-          console.log(arrayletra)
           let letra =''
           
-          //let colores = color_dedo[ dedo [ dificultad[ pos ] ] ]
-          
-         // context.fillStyle=color_dedo.color
-         // context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
           if(arrayletra.length==2)
           {
-            
+            context.clearRect(0, 0, canvas.width, canvas.height);
             letra = arrayletra[1]
-   
-              context.fillStyle=color_dedo[dedo[letra]].color
+            context.fillStyle=color_dedo[dedo[letra]].color
             context.fillRect(color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY,color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width)
             
-           // context.fillStyle=color_dedo[dedo[letra]].color
-          //  context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-           /*
-              context.fillStyle=color_dedo[dedo[letra]].color
-            context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-            */
-
-            
-           //para pintar la lentra
-           /* context.fillStyle=color_dedo[dedo[letra]].color
-            context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-           */ 
-           
-           
-            //console.log(colores)
-           // console.log(color_dedo[dedo[letra]].color) 
-           
-           //context.fillStyle=colores.color
-           // context.fillRect(colores.width,colores.height,colores.posX,colores.posY)
-            //context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
-           // context.fillStyle=color_dedo[dedo[letra]]
-            //context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
-            //context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-           // console.log(color_dedo[dedo[letra]])
-          
           }
           else
           {
             letra = arrayletra[0]
           }
-          console.log(letra)
           
           if(textoamostrar[pos] == letra){
           pos++
-
-          
-          
-          //context.fillRect = (color1.posX, color1.posY, color1.width, color1.height)
-
           context.clearRect(0, 0, canvas.width, canvas.height);
           context.drawImage(imagen1,0,50); 
           if(pos == 4)
@@ -137,18 +99,14 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
             context2.font = '20px serif';
             context1.font = '20px serif';
             context.fillText(finalizado[0],350,50);
-            context1.fillText(usuario2,50,25)
-            context2.fillText(equivocaciones,70,25)
-            
-           
+            context1.fillText(usuario2,50,25);
+            context2.fillText(equivocaciones,70,25);
             cxt2.drawImage(imagen2,0,0); 
-        
-
           }
           context.fillText(textoamostrar[pos],400,50)
           }
           else{
-          console.log('Tecla incorrecta')
+          console.log('Tecla incorrecta, presionaste:', letra)
           equivocaciones++
           console.log(equivocaciones)
           
