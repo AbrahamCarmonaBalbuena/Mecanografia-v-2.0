@@ -1,11 +1,13 @@
 #Encabezado,#Cuerpo, #Pie-Pagina{ display: flex; justify-content: center; }
 
-canvas{ 
+
+canvas.Cuerpo{
   position: relative; 
   border: 1px solid rgb(149, 45, 45);
   margin-right: 5px;
   background-color: #ffffff;
 }
+
 
 #Usuario{ 
   width: 1600px;
@@ -19,10 +21,8 @@ canvas{
   .boton, .entrada{ height: 40px; 
     font-family:'Century Gothic';
   }
-  .margen-superior{ margin-top: 10px;
-  }
-  .margen-inferior{ margin-bottom: 10px; 
-  }
+  .margen-superior{ margin-top: 10px;}
+  .margen-inferior{ margin-bottom: 10px; }
   .boton{
     background: #D3D3D3;
     border: 1px solid #D3D3D3;

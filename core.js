@@ -11,11 +11,6 @@ cxt2 = canvas4.getContext('2d')
 imagen2= new Image()
 imagen2.src="Lesabes.png"
 
-let canvas = document.getElementById('canvas'),
-    context = canvas.getContext('2d'),
-imagen1= new Image()
-imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
-
     btnReinicio=document.getElementById('btnReinicio'),
     posX=50
     posY=400
