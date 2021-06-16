@@ -10,6 +10,8 @@ let canvas4 = document.getElementById('canvas4')
     cxt2 = canvas4.getContext('2d')
     imagen2= new Image()
     imagen2.src="Lesabes.png"
+    imagen3= new Image()
+    imagen3.src="nolesabes.png"
 
 let canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
@@ -116,7 +118,16 @@ let canvas = document.getElementById('canvas'),
             context.fillText(finalizado[0],350,50);
             context1.fillText(usuario2,50,25);
             context2.fillText(equivocaciones,70,25);
-            cxt2.drawImage(imagen2,0,0); 
+
+            if(equivocaciones < 5)
+            {
+              cxt2.drawImage(imagen2,0,0); 
+ 
+            } 
+            else
+            {
+              cxt2.drawImage(imagen3,0,0); 
+            }    
           }
           context.fillText(textoamostrar[pos],400,50)
           }
@@ -187,8 +198,16 @@ let canvas = document.getElementById('canvas'),
            context.fillText(finalizado[0],350,50);
            context1.fillText(usuario2,50,25)
            context2.fillText(equivocaciones,70,25)
-            
-           cxt2.drawImage(imagen2,0,0); 
+
+           if(equivocaciones < 5)
+            {
+              cxt2.drawImage(imagen2,0,0); 
+ 
+            } 
+            else
+            {
+              cxt2.drawImage(imagen3,0,0); 
+            }    
       
          }
          context.fillText(textoamostrar[pos],400,50)
@@ -256,8 +275,17 @@ let canvas = document.getElementById('canvas'),
            context1.font = '20px serif';
            context.fillText(finalizado[0],350,50);
            context1.fillText(usuario2,50,25)
-           context2.fillText(equivocaciones,70,25)            
-           cxt2.drawImage(imagen2,0,0); 
+           context2.fillText(equivocaciones,70,25)   
+                    
+           if(equivocaciones < 5)
+            {
+              cxt2.drawImage(imagen2,0,0); 
+ 
+            } 
+            else
+            {
+              cxt2.drawImage(imagen3,0,0); 
+            }    
 
          }
          context.fillText(textoamostrar[pos],400,50)
