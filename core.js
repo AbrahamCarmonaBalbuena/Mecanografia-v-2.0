@@ -151,10 +151,10 @@ let canvas = document.getElementById('canvas'),
          let letra =''
          if(arrayletra.length==2)
          {
-           letra = arrayletra[1]
-           context.beginPath();
-           context.save();
-           context.drawImage(imagen1,0,50); 
+            letra = arrayletra[1]
+            context.beginPath();
+            context.save();
+            context.drawImage(imagen1,0,50); 
             context.fillStyle=color_dedo[dedos[letra]].color
             context.fillRect(color_dedo[dedos[letra]].posX,
                               color_dedo[dedos[letra]].posY,
@@ -162,12 +162,12 @@ let canvas = document.getElementById('canvas'),
                                 color_dedo[dedos[letra]].height)
                                context.restore();     
            //context.restore()
-           context.save();
-           context.font = '30px serif';
-           context.fillText(letra,color_dedo[dedos[letra]].posX,
+            context.save();
+            context.font = '30px serif';
+            context.fillText(letra,color_dedo[dedos[letra]].posX,
                               color_dedo[dedos[letra]].posY,)
                               context.restore();
-           context.closePath();
+            context.closePath();
          }
          else
          {
@@ -182,11 +182,11 @@ let canvas = document.getElementById('canvas'),
          //context.drawImage(imagen1,0,50); 
          if(pos == 8)
          {       
-           context2.font = '20px serif';
-           context1.font = '20px serif';
-           context.fillText(finalizado[0],350,50);
-           context1.fillText(usuario2,50,25)
-           context2.fillText(equivocaciones,70,25)
+            context2.font = '20px serif';
+            context1.font = '20px serif';
+            context.fillText(finalizado[0],350,50);
+            context1.fillText(usuario2,50,25)
+            context2.fillText(equivocaciones,70,25)
             
            cxt2.drawImage(imagen2,0,0); 
       
@@ -221,10 +221,10 @@ let canvas = document.getElementById('canvas'),
          let letra =''
          if(arrayletra.length==2)
          {
-           letra = arrayletra[1]
-           context.beginPath();
-           context.save();
-           context.drawImage(imagen1,0,50); 
+            letra = arrayletra[1]
+            context.beginPath();
+            context.save();
+            context.drawImage(imagen1,0,50); 
             context.fillStyle=color_dedo[dedos[letra]].color
             context.fillRect(color_dedo[dedos[letra]].posX,
                               color_dedo[dedos[letra]].posY,
@@ -232,16 +232,16 @@ let canvas = document.getElementById('canvas'),
                                 color_dedo[dedos[letra]].height)
                                context.restore();     
            //context.restore()
-           context.save();
-           context.font = '30px serif';
-           context.fillText(letra,color_dedo[dedos[letra]].posX,
+            context.save();
+            context.font = '30px serif';
+            context.fillText(letra,color_dedo[dedos[letra]].posX,
                               color_dedo[dedos[letra]].posY,)
                               context.restore();
-           context.closePath();
+            context.closePath();
          }
          else
          {
-           letra = arrayletra[0]
+            letra = arrayletra[0]
          }
          console.log(letra)
 
@@ -252,12 +252,12 @@ let canvas = document.getElementById('canvas'),
         // context.drawImage(imagen1,0,50); 
          if(pos == 14)
          {       
-           context2.font = '20px serif';
-           context1.font = '20px serif';
-           context.fillText(finalizado[0],350,50);
-           context1.fillText(usuario2,50,25)
-           context2.fillText(equivocaciones,70,25)            
-           cxt2.drawImage(imagen2,0,0); 
+            context2.font = '20px serif';
+            context1.font = '20px serif';
+            context.fillText(finalizado[0],350,50);
+            context1.fillText(usuario2,50,25)
+            context2.fillText(equivocaciones,70,25)            
+            cxt2.drawImage(imagen2,0,0); 
 
          }
          context.fillText(textoamostrar[pos],400,50)
