@@ -46,23 +46,22 @@ canvas{
   font-weight:600;
   text-shadow: gray 3px 3px;
   padding: 10px 20px;
-  }
-    .boton, .entrada{ height: 40px; }
-    .margen-superior{ margin-top: 10px; }
-    .margen-inferior{ margin-bottom: 10px; }
-    .boton{
-      background: #D3D3D3;
-      border: 1px solid #D3D3D3;
-      border-radius: 8px;
-      width: 300px;
-      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-      
-    }
+}
+.boton, .entrada{ height: 40px; }
+.margen-superior{ margin-top: 10px; }
+.margen-inferior{ margin-bottom: 10px; }
+.boton{
+  background: #D3D3D3;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+  width: 300px;
   
-    .entrada{
-      width: 100;
-      border: 1px solid #595959;
-  }
+}
+
+.entrada{
+  width: 100;
+  border: 1px solid #595959;
+}
 
 
 
