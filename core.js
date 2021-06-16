@@ -15,6 +15,7 @@ let canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d'),
     imagen1= new Image()
     imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
+    
 
     btnReinicio=document.getElementById('btnReinicio'),
     posX=50
@@ -70,11 +71,17 @@ let canvas = document.getElementById('canvas'),
         context.font = '20px serif';
         context.fillText(textoamostrar[0],400,50)
         
-        
         window.document.addEventListener('keydown', function (e){
           let arrayletra = e.code.split('Key')
-          let letra =''
           
+          letra = arrayletra[1]
+            context.beginPath();
+            context.save();
+            context.fillStyle=color_dedo[dedo[letra]].color
+            context.fillRect(color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY,color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width)
+            context.restore();
+            context.closePath();
+
           if(arrayletra.length==2)
           {
             context.drawImage(imagen1,0,50);
@@ -96,6 +103,7 @@ let canvas = document.getElementById('canvas'),
           pos++
           context.clearRect(0, 0, canvas.width, canvas.height);
           context.drawImage(imagen1,0,50); 
+
           if(pos == 4)
           {       
             context2.font = '20px serif';
