@@ -22,14 +22,15 @@ let canvas = document.getElementById('canvas'),
     equivocaciones=0
    
     dificultad = {
-      "facil":["A","S","D","F",""],
-      "medio":["A","W","D","R","J","I", "L","P", "X"],
-      "dificil":["Q","X","E","V","T","N","U","J","O","L","A","H","F","K",""]
+      facil:["A","S","D","F",""],
+      medio:["A","W","D","R","J","I", "L","P", ""],
+      dificil:["Q","X","E","V","T","N","U","J","O","L","A","H","F","K",""]
     },
     
     finalizado =["Completado"]
     textoamostrar =[],
     pos=0,
+
 //declaracion del boton y la lectura del usuario
     btnusuario = document.getElementById('btnusuario'),
     usuario = document.getElementById('usuario'),
@@ -45,12 +46,10 @@ let canvas = document.getElementById('canvas'),
     btnDificil= document.getElementById('btnDificil'),
     btnDificil.disabled=true,
    
-//ocultacion de la entrada hasta que se seleccione la dificultad
-
-
+    
+    //ocultacion de la entrada hasta que se seleccione la dificultad
     //obtencion del nombre de usuario para guardarlo
     btnusuario.addEventListener( 'click', function(){
-
         //desbloqueamos los botones de los niveles
         btnFacil.disabled=false
         btnMedio.disabled=false
@@ -64,30 +63,30 @@ let canvas = document.getElementById('canvas'),
         //bloqueamos el boton usuario para que no se generen nuevamente hasta recargar la pagina
         btnusuario.disabled= true
       } )
-      
-      function Limpiar(){
-        context.drawImage(imagen1,0,50);
-      }
 
       btnFacil.addEventListener( 'click', function(){
-        Limpiar()
+        context.drawImage(imagen1,0,50);
         textoamostrar = dificultad.facil
         context.font = '20px serif';
         context.fillText(textoamostrar[0],400,50)
         
+        
         window.document.addEventListener('keydown', function (e){
           let arrayletra = e.code.split('Key')
           let letra =''
-
-
-
+          
           if(arrayletra.length==2)
           {
+            context.drawImage(imagen1,0,50);
             letra = arrayletra[1]
+            context.beginPath();
+            context.save();
             context.fillStyle=color_dedo[dedo[letra]].color
             context.fillRect(color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY,color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width)
-            
+            context.restore();
+            context.closePath();
           }
+
           else
           {
             letra = arrayletra[0]
@@ -112,7 +111,7 @@ let canvas = document.getElementById('canvas'),
           console.log('Tecla incorrecta, presionaste:', letra)
           equivocaciones++
           console.log(equivocaciones)
-          
+          context.fillText('Debe de presionar', textoamostrar[pos],0,50)
           }
           })    
           
