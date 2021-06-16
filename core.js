@@ -1,15 +1,20 @@
 let canvas2 = document.getElementById('canvas2')
-context1 = canvas2.getContext('2d')
+    context1 = canvas2.getContext('2d')
 let dedo = dedos 
 
 let canvas3 = document.getElementById('canvas3')
-context2 = canvas3.getContext('2d')
+    context2 = canvas3.getContext('2d')
 
 
 let canvas4 = document.getElementById('canvas4')
-cxt2 = canvas4.getContext('2d')
-imagen2= new Image()
-imagen2.src="Lesabes.png"
+    cxt2 = canvas4.getContext('2d')
+    imagen2= new Image()
+    imagen2.src="Lesabes.png"
+
+let canvas = document.getElementById('canvas'),
+    context = canvas.getContext('2d'),
+    imagen1= new Image()
+    imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
 
     btnReinicio=document.getElementById('btnReinicio'),
     posX=50
@@ -60,21 +65,24 @@ imagen2.src="Lesabes.png"
         btnusuario.disabled= true
       } )
       
-      btnFacil.addEventListener( 'click', function(){
-        context.drawImage(imagen1,0,50); 
-        textoamostrar = dificultad.facil
+      function Limpiar(){
+        context.drawImage(imagen1,0,50);
+      }
 
+      btnFacil.addEventListener( 'click', function(){
+        Limpiar()
+        textoamostrar = dificultad.facil
         context.font = '20px serif';
         context.fillText(textoamostrar[0],400,50)
-        
         
         window.document.addEventListener('keydown', function (e){
           let arrayletra = e.code.split('Key')
           let letra =''
-          
+
+
+
           if(arrayletra.length==2)
           {
-            context.clearRect(0, 0, canvas.width, canvas.height);
             letra = arrayletra[1]
             context.fillStyle=color_dedo[dedo[letra]].color
             context.fillRect(color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY,color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width)
