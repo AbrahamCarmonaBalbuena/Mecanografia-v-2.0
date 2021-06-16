@@ -65,20 +65,6 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
         //bloqueamos el boton usuario para que no se generen nuevamente hasta recargar la pagina
         btnusuario.disabled= true
       } )
-     /* function init(){
-        drawfinger()
-      }
-      function drawfinger(){
-        if(typeof dedo[dificultad[dedos]] == 'string'){
-          let fingeratributes = color_dedo[dedo[letra]]
-          context.fillStyle = fingeratributes.color
-          context.fillRect(fingeratributes.posX,
-            fingeratributes.posY,
-            fingeratributes.width,
-            fingeratributes.height)
-        }
-
-      }*/
       btnFacil.addEventListener( 'click', function(){
         context.drawImage(imagen1,0,50); 
         textoamostrar = dificultad.facil
@@ -92,74 +78,28 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
           console.log(arrayletra)
           let letra =''
           
-          //let colores = color_dedo[ dedo [ dificultad[ pos ] ] ]
-          
-         // context.fillStyle=color_dedo.color
-         // context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
-        
-        
-           // let fingeratributes = color_dedo[dedos[letra]]
-            
-          
-  
-        
           if(arrayletra.length==2)
           {
             
             letra = arrayletra[1]
-           /*   if(letra==arrayletra[1]){
-                context.beginPath();
-           context.save();
-                context.fillStyle = fingeratributes.color
-                context.fillRect(fingeratributes.posX,
-                  fingeratributes.posY,
-                  fingeratributes.width,
-                  fingeratributes.height)
-                  context.restore();
-                  context.closePath();
-              }
-             */
-            
-           // context.fillStyle=color_dedo[dedo[letra]].color
-          //  context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-           /*
-              context.fillStyle=color_dedo[dedo[letra]].color
-            context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-            */
-
-            
-           //para pintar la lentra
-           /* context.fillStyle=color_dedo[dedo[letra]].color
-            context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-           */ 
-           
-           
-            //console.log(colores)
-           // console.log(color_dedo[dedo[letra]].color) 
-           
-           //context.fillStyle=colores.color
-           // context.fillRect(colores.width,colores.height,colores.posX,colores.posY)
-            //context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
-           // context.fillStyle=color_dedo[dedo[letra]]
-            //context.fillRect(color_dedo.width,color_dedo.height,color_dedo.posX,color_dedo.posY)
-            //context.fillRect(color_dedo[dedo[letra]].height,color_dedo[dedo[letra]].width,color_dedo[dedo[letra]].posX,color_dedo[dedo[letra]].posY)
-           // console.log(color_dedo[dedo[letra]])
            
              context.beginPath();
            context.save();
+           context.drawImage(imagen1,0,50); 
             context.fillStyle=color_dedo[dedos[letra]].color
             context.fillRect(color_dedo[dedos[letra]].posX,
                               color_dedo[dedos[letra]].posY,
                                color_dedo[dedos[letra]].width,
                                 color_dedo[dedos[letra]].height)
-                      context.restore();
-           //context.restore()
+                               context.restore();     
+           context.save();
+           context.font = '30px serif';
+           context.fillText(letra,color_dedo[dedos[letra]].posX,
+                              color_dedo[dedos[letra]].posY,)
+                              context.restore();
            context.closePath();
-           
 
-          
-          
-
+      
           }
           
           else
@@ -170,13 +110,9 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
           
           if(textoamostrar[pos] == letra){
           pos++
-
           
-          
-          //context.fillRect = (color1.posX, color1.posY, color1.width, color1.height)
-
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.drawImage(imagen1,0,50); 
+          context.clearRect(40,0, 500,50);
+         // context.drawImage(imagen1,0,50); 
           if(pos == 4)
           {       
             context2.font = '20px serif';
@@ -224,6 +160,22 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
          if(arrayletra.length==2)
          {
            letra = arrayletra[1]
+           context.beginPath();
+           context.save();
+           context.drawImage(imagen1,0,50); 
+            context.fillStyle=color_dedo[dedos[letra]].color
+            context.fillRect(color_dedo[dedos[letra]].posX,
+                              color_dedo[dedos[letra]].posY,
+                               color_dedo[dedos[letra]].width,
+                                color_dedo[dedos[letra]].height)
+                               context.restore();     
+           //context.restore()
+           context.save();
+           context.font = '30px serif';
+           context.fillText(letra,color_dedo[dedos[letra]].posX,
+                              color_dedo[dedos[letra]].posY,)
+                              context.restore();
+           context.closePath();
          }
          else
          {
@@ -234,8 +186,8 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
          if(textoamostrar[pos] == letra){
          pos++
          
-         context.clearRect(0, 0, canvas.width, canvas.height);
-         context.drawImage(imagen1,0,50); 
+         context.clearRect(40,0, 500,50);
+         //context.drawImage(imagen1,0,50); 
          if(pos == 8)
          {       
            context2.font = '20px serif';
@@ -278,6 +230,22 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
          if(arrayletra.length==2)
          {
            letra = arrayletra[1]
+           context.beginPath();
+           context.save();
+           context.drawImage(imagen1,0,50); 
+            context.fillStyle=color_dedo[dedos[letra]].color
+            context.fillRect(color_dedo[dedos[letra]].posX,
+                              color_dedo[dedos[letra]].posY,
+                               color_dedo[dedos[letra]].width,
+                                color_dedo[dedos[letra]].height)
+                               context.restore();     
+           //context.restore()
+           context.save();
+           context.font = '30px serif';
+           context.fillText(letra,color_dedo[dedos[letra]].posX,
+                              color_dedo[dedos[letra]].posY,)
+                              context.restore();
+           context.closePath();
          }
          else
          {
@@ -288,8 +256,8 @@ imagen1.src ="dedos-y-teclas-para-mecanografia.jpg"
          if(textoamostrar[pos] == letra){
          pos++
          
-         context.clearRect(0, 0, canvas.width, canvas.height);
-         context.drawImage(imagen1,0,50); 
+         context.clearRect(40,0, 500,50);
+        // context.drawImage(imagen1,0,50); 
          if(pos == 14)
          {       
            context2.font = '20px serif';
